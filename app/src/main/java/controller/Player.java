@@ -2,7 +2,7 @@ package controller;
 
 import model.Game;
 import view.View;
-
+import view.View.ActionOptions;
 
 /**
  * Scenario controller for playing the game.
@@ -26,16 +26,16 @@ public class Player {
       view.displayGameOver(game.isDealerWinner());
     }
 
-    int input = view.getInput();
+    ActionOptions action = view.getAction();
 
-    if (input == 'p') {
+    if (action == ActionOptions.PLAY) {
       game.newGame();
-    } else if (input == 'h') {
+    } else if (action == ActionOptions.HIT) {
       game.hit();
-    } else if (input == 's') {
+    } else if (action == ActionOptions.STAND) {
       game.stand();
     }
 
-    return input != 'q';
+    return action != ActionOptions.QUIT;
   }
 }

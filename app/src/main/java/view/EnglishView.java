@@ -1,5 +1,8 @@
 package view;
 
+// import java.nio.charset.StandardCharsets;
+// import java.util.Scanner;
+
 /**
  * Implements an english console view.
  */
@@ -14,6 +17,22 @@ public class EnglishView implements View {
     }
     System.out.println("Hello Black Jack World");
     System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+  }
+
+  public ActionOptions getAction() {
+    int input = getInput();
+    switch (input) {
+      case 'p':
+        return ActionOptions.PLAY;
+      case 'h':
+        return ActionOptions.HIT;
+      case 's':
+        return ActionOptions.STAND;
+      case 'q':
+        return ActionOptions.QUIT;
+      default:
+        return null;
+    }
   }
 
   /**

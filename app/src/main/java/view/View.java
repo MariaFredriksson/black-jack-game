@@ -17,6 +17,15 @@ public interface View {
    */
   int getInput();
 
+  enum ActionOptions {
+    PLAY,
+    HIT,
+    STAND,
+    QUIT
+  }
+
+  ActionOptions getAction();
+
   /**
    * Displays a card.
 
