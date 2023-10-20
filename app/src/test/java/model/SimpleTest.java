@@ -22,6 +22,9 @@ public class SimpleTest {
   public void testSoft17() {
     Dealer dealer = new Dealer(new RulesFactory());
     
+    dealer.newGame(dealer);
+    dealer.clearHand();
+
     Card.Mutable ace = new Card.Mutable(Card.Color.Diamonds, Card.Value.Ace);
     Card.Mutable four = new Card.Mutable(Card.Color.Diamonds, Card.Value.Four);
     Card.Mutable two = new Card.Mutable(Card.Color.Diamonds, Card.Value.Two);
@@ -32,7 +35,8 @@ public class SimpleTest {
 
     dealer.showHand();
 
-    assertEquals(17, dealer.calcScore());
+    // assertEquals(17, dealer.calcScore());
+    assertEquals(true, dealer.hit(dealer));
 
   }
 
