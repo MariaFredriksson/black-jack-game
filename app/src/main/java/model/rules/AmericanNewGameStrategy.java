@@ -1,6 +1,5 @@
 package model.rules;
 
-import model.Card;
 import model.Dealer;
 import model.Deck;
 import model.Player;
@@ -8,23 +7,11 @@ import model.Player;
 class AmericanNewGameStrategy implements NewGameStrategy {
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
-    Card.Mutable c;
 
-    c = deck.getCard();
-    c.show(true);
-    player.dealCard(c);
-
-    c = deck.getCard();
-    c.show(true);
-    dealer.dealCard(c);
-
-    c = deck.getCard();
-    c.show(true);
-    player.dealCard(c);
-
-    c = deck.getCard();
-    c.show(false);
-    dealer.dealCard(c);
+    deck.getShowDealCard(true, player);
+    deck.getShowDealCard(true, dealer);
+    deck.getShowDealCard(true, player);
+    deck.getShowDealCard(false, dealer);
 
     return true;
   }

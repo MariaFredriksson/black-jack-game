@@ -46,6 +46,12 @@ public class Deck {
     return c;
   }
 
+  public void getShowDealCard(boolean showCard, Player playerToDealCardTo) {
+    Card.Mutable c = getCard();
+    c.show(showCard);
+    playerToDealCardTo.dealCard(c);
+  }
+
   private void shuffle() {
     
     for (int i = 0; i < 1017; i++) {
