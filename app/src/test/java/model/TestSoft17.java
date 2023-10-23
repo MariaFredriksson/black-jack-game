@@ -1,19 +1,12 @@
 package model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import org.junit.jupiter.api.Test;
-
-import model.Card.Mutable;
 import model.rules.RulesFactory;
 
-//import static org.junit.jupiter.api.Assertions.assertTrue;
-//import org.junit.jupiter.api.Test;
 
 
-public class SimpleTest {
+public class TestSoft17 {
 
  // Make a test to check for soft 17
   @Test
