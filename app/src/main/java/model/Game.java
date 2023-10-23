@@ -1,5 +1,7 @@
 package model;
 
+import controller.DealCardSubscriber;
+
 /**
  * Represents the entirety of the game. Acts as a Facade to the model.
  */
@@ -14,6 +16,10 @@ public class Game {
   public Game() {
     dealer = new Dealer(new model.rules.RulesFactory());
     player = new Player();
+  }
+
+  public void addSubscriber(DealCardSubscriber subscriber) {
+    dealer.addSubscriber(subscriber);
   }
 
   /**
