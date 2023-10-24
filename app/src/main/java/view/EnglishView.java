@@ -1,7 +1,6 @@
 package view;
 
-// import java.nio.charset.StandardCharsets;
-// import java.util.Scanner;
+import model.Card;
 
 /**
  * Implements an english console view.
@@ -51,21 +50,21 @@ public class EnglishView implements View {
     }
   }
 
-  public void displayCard(model.Card card) {
+  public void displayCard(Card card) {
     System.out.println("" + card.getValue() + " of " + card.getColor());
   }
 
-  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
+  public void displayPlayerHand(Iterable<Card> hand, int score) {
     displayHand("Player", hand, score);
   }
 
-  public void displayDealerHand(Iterable<model.Card> hand, int score) {
+  public void displayDealerHand(Iterable<Card> hand, int score) {
     displayHand("Dealer", hand, score);
   }
 
-  private void displayHand(String name, Iterable<model.Card> hand, int score) {
+  private void displayHand(String name, Iterable<Card> hand, int score) {
     System.out.println(name + " Has: ");
-    for (model.Card c : hand) {
+    for (Card c : hand) {
       displayCard(c);
     }
     System.out.println("Score: " + score);

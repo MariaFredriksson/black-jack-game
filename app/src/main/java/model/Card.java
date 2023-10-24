@@ -25,7 +25,7 @@ public class Card {
    */
   public static class Mutable extends Card {
     /**
-      * Initalizing constructor that creates a hidden card.
+      * Initializing constructor that creates a hidden card.
 
       * @param color The color of the card.
       * @param value The value of the card.
@@ -35,7 +35,7 @@ public class Card {
     }
 
     /**
-     * Initalizing constructor that creates a hidden card.
+     * Initializing constructor that creates a hidden card.
 
       * @param show true if the card is to be shown.
       */
@@ -49,7 +49,7 @@ public class Card {
   protected boolean isHidden;
 
   /**
-   * Initalizing constructor that creates a hidden card.
+   * Initializing constructor that creates a hidden card.
 
    * @param color The color of the card.
    * @param value The value of the card.

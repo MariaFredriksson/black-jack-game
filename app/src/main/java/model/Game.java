@@ -63,7 +63,7 @@ public class Game {
   /**
    * Call to let the dealer take cards.
 
-   * @return True if the dealer has the initiaive.
+   * @return True if the dealer has the initiative.
    */
   public boolean stand() {
     return dealer.stand();
@@ -81,7 +81,7 @@ public class Game {
   /**
    * Gets the cards currently in the player's hand.
 
-   * @return The palyer's cards.
+   * @return The player's cards.
    */
   public Iterable<Card> getPlayerHand() {
     return player.getHand();

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Represents a deck of playingcards.
+ * Represents a deck of playing cards.
  */
 public class Deck {
 
@@ -47,7 +47,6 @@ public class Deck {
   public void getShowDealCard(boolean showCard, Dealer dealer, Player playerToDealCardTo) {
     Card.Mutable c = getCard();
     c.show(showCard);
-    // playerToDealCardTo.dealCard(c);
     dealer.dealCardToPlayer(c, playerToDealCardTo);
   }
 

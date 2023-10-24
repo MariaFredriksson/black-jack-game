@@ -1,5 +1,7 @@
 package view;
 
+import model.Card;
+
 /**
  * Implements a Swedish console view.
  */
@@ -57,8 +59,8 @@ public class SwedishView implements View {
 
    * @param card The card to display.
    */
-  public void displayCard(model.Card card) {
-    if (card.getColor() == model.Card.Color.Hidden) {
+  public void displayCard(Card card) {
+    if (card.getColor() == Card.Color.Hidden) {
       System.out.println("Dolt Kort");
     } else {
       String[] colors = { "Hjärter", "Spader", "Ruter", "Klöver" };
@@ -68,11 +70,11 @@ public class SwedishView implements View {
     }
   }
 
-  public void displayPlayerHand(Iterable<model.Card> hand, int score) {
+  public void displayPlayerHand(Iterable<Card> hand, int score) {
     displayHand("Spelare", hand, score);
   }
 
-  public void displayDealerHand(Iterable<model.Card> hand, int score) {
+  public void displayDealerHand(Iterable<Card> hand, int score) {
     displayHand("Croupier", hand, score);
   }
 
@@ -90,9 +92,9 @@ public class SwedishView implements View {
     }
   }
 
-  private void displayHand(String name, Iterable<model.Card> hand, int score) {
+  private void displayHand(String name, Iterable<Card> hand, int score) {
     System.out.println(name + " Har: " + score);
-    for (model.Card c : hand) {
+    for (Card c : hand) {
       displayCard(c);
     }
     System.out.println("Poäng: " + score);
