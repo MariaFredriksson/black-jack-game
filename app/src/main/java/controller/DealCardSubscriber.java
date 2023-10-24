@@ -1,5 +1,7 @@
 package controller;
 
+import model.Player;
+
 public interface DealCardSubscriber {
-  void update();
+  void update(Player playerWithAddedCard);
 }

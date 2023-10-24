@@ -18,6 +18,10 @@ public class Game {
     player = new Player();
   }
 
+  public Player getPlayer() {
+    return player;
+  }
+
   public void addSubscriber(DealCardSubscriber subscriber) {
     dealer.addSubscriber(subscriber);
   }

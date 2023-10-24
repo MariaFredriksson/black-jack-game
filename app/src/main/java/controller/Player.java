@@ -22,8 +22,6 @@ public class Player implements DealCardSubscriber {
     game.addSubscriber(this);
   }
 
-  // ! Hit does not display the cards, but it happens, maybe...
-
   /**
    * Runs the play use case.
 
@@ -33,6 +31,8 @@ public class Player implements DealCardSubscriber {
     view.displayWelcomeMessage();
 
     if (game.isGameOver()) {
+      view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+      view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
       view.displayGameOver(game.isDealerWinner());
     }
 
@@ -50,8 +50,18 @@ public class Player implements DealCardSubscriber {
   }
 
   @Override
-  public void update() {
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+  public void update(model.Player playerWithAddedCard) {
+    if (playerWithAddedCard == game.getPlayer()) {
+      view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    } else {
+      view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    }
+
+    // Add a pause for 2 seconds, to make it a bit more dramatic.
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 }

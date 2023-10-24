@@ -57,12 +57,12 @@ public class Dealer extends Player {
 
   public void dealCardToPlayer(Card.Mutable c, Player playerToDealCardTo) {
     playerToDealCardTo.dealCard(c);
-    updateShowCards();
+    updateShowCards(playerToDealCardTo);
   }
 
-  private void updateShowCards() {
+  private void updateShowCards(Player playerWithAddedCard) {
     for (DealCardSubscriber sub : subscribers) {
-      sub.update();
+      sub.update(playerWithAddedCard);
     }
   }
 
