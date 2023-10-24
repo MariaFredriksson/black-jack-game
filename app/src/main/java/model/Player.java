@@ -1,10 +1,7 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import controller.DealCardSubscriber;
 
 /**
  * Represents a player in the Black Jack game. A Player has a hand of cards.
@@ -13,19 +10,10 @@ public class Player {
 
   private List<Card.Mutable> hand;
   protected final int maxScore = 21;
-  // private ArrayList<DealCardSubscriber> subscribers = new ArrayList<DealCardSubscriber>();
 
   public Player() {
     hand = new LinkedList<Card.Mutable>();
   }
-
-  // public void addSubscriber(DealCardSubscriber subscriber) {
-  //   subscribers.add(subscriber);
-  // }
-
-  // public void removeSubscriber(DealCardSubscriber subscriber) {
-  //   subscribers.remove(subscriber);
-  // }
 
   /**
    * Adds a card to the Player's hand. 
@@ -34,14 +22,8 @@ public class Player {
    */
   public void dealCard(Card.Mutable addToHand) {
     hand.add(addToHand);
-    // updateShowCards();
   }
 
-  // private void updateShowCards() {
-  //   for (DealCardSubscriber sub : subscribers) {
-  //     sub.update();
-  //   }
-  // }
 
   /**
    * Returns the cards in thand.
