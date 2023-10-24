@@ -1,7 +1,5 @@
 package model;
 
-import controller.DealCardSubscriber;
-
 /**
  * Represents the entirety of the game. Acts as a Facade to the model.
  */

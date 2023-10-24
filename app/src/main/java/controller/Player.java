@@ -1,5 +1,6 @@
 package controller;
 
+import model.DealCardSubscriber;
 import model.Game;
 import view.View;
 import view.View.ActionOptions;
