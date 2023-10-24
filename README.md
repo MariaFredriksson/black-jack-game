@@ -12,16 +12,16 @@ Maddelen Hedenström (mh222vu)
 
 ## How to play the game
 Commands:
-Type 'p' to Play
-Type 'h' to Hit
-Type 's' to Stand
-Type 'q' to Quit
+Type 'p' to Play.<br>
+Type 'h' to Hit.<br>
+Type 's' to Stand.<br>
+Type 'q' to Quit.<br>
 
 ## Rules of the game
-Closest to 21 winns.
-Cards 2-9 is of its own value.
-Cards 10, J, Q, K is of value 10.
-Cards A, are value of 1 or 11.
+Closest to 21 winns.<br>
+Cards 2-9 is of its own value.<br>
+Cards 10, J, Q, K is of value 10.<br>
+Cards A, are value of 1 or 11.<br>
 
 ## The soft 17 rule
 Soft 17 means that the dealer has 17 but in a combination of Ace and 6 (for example Ace, two, two, two). This means that the Dealer can get another card valued at 10 but still have 17 as the value of the ace is reduced to 1. Using the soft 17 rule the dealer should take another card (compared to the original rule when the dealer only takes cards on a score of 16 or lower).
