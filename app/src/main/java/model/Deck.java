@@ -44,6 +44,12 @@ public class Deck {
     return c;
   }
 
+  /**
+   * Deals a card to a player.
+   *
+   * @param dealer The dealer to deal the card.
+   * @param playerToDealCardTo The player to deal the card to.
+   */
   public void getShowDealCard(boolean showCard, Dealer dealer, Player playerToDealCardTo) {
     Card.Mutable c = getCard();
     c.show(showCard);

@@ -10,8 +10,8 @@ class BasicHitStrategy implements HitStrategy {
     return dealer.calcScore() < hitLimit || soft17(dealer);
   }
 
-   // Soft 17 rule, when dealer has 17 and an ace, dealer can choose to hit
-   private boolean soft17(Player dealer) {
+  // Soft 17 rule, when dealer has 17 and an ace, dealer can choose to hit
+  private boolean soft17(Player dealer) {
     if (dealer.calcScore() == 17) {
       for (Card c : dealer.getHand()) {
         if (c.getValue() == Card.Value.Ace) {

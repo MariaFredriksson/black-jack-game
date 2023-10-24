@@ -19,6 +19,9 @@ public interface View {
    */
   int getInput();
 
+  /**
+   * The possible actions the player can perform.
+   */
   enum ActionOptions {
     PLAY,
     HIT,

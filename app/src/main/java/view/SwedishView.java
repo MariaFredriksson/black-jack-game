@@ -20,6 +20,11 @@ public class SwedishView implements View {
     System.out.println("Skriv 's' för att Spela, 'k' för nytt kort, 'n' för att stanna/nöjd 'a' för att avsluta\n");
   }
 
+  /**
+   * Returns the action the player wants to perform.
+   *
+   * @return the action the player wants to perform.
+   */
   public ActionOptions getAction() {
     int input = getInput();
     switch (input) {

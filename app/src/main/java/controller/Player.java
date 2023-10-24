@@ -14,6 +14,7 @@ public class Player implements DealCardSubscriber {
 
   /**
    * Creates a new instance of the player.
+   *
    * @param game The game state.
    * @param view The view to use.
    */

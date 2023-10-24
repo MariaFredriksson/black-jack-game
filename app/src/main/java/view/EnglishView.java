@@ -16,6 +16,11 @@ public class EnglishView implements View {
     System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
   }
 
+  /**
+   * Returns the action the player wants to perform.
+   *
+   * @return the action the player wants to perform.
+   */
   public ActionOptions getAction() {
     int input = getInput();
     switch (input) {
