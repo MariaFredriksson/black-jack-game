@@ -8,10 +8,10 @@ class AmericanNewGameStrategy implements NewGameStrategy {
 
   public boolean newGame(Deck deck, Dealer dealer, Player player) {
 
-    deck.getShowDealCard(true, player);
-    deck.getShowDealCard(true, dealer);
-    deck.getShowDealCard(true, player);
-    deck.getShowDealCard(false, dealer);
+    deck.getShowDealCard(true, dealer, player);
+    deck.getShowDealCard(true, dealer, dealer);
+    deck.getShowDealCard(true, dealer, player);
+    deck.getShowDealCard(false, dealer, dealer);
 
     return true;
   }

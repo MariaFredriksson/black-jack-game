@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+
+import controller.DealCardSubscriber;
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
 import model.rules.RulesFactory;
@@ -14,6 +17,7 @@ public class Dealer extends Player {
   private NewGameStrategy newGameRule;
   private HitStrategy hitRule;
   private WinningOnEqualStrategy winningOnEqualRule;
+  private ArrayList<DealCardSubscriber> subscribers = new ArrayList<DealCardSubscriber>();
 
   /**
    * Initializing constructor.
@@ -25,6 +29,14 @@ public class Dealer extends Player {
     newGameRule = rulesFactory.getNewGameRule();
     hitRule = rulesFactory.getHitRule();
     winningOnEqualRule = rulesFactory.getWinningOnEqualRule();
+  }
+
+  public void addSubscriber(DealCardSubscriber subscriber) {
+    subscribers.add(subscriber);
+  }
+
+  public void removeSubscriber(DealCardSubscriber subscriber) {
+    subscribers.remove(subscriber);
   }
 
   /**
@@ -43,6 +55,17 @@ public class Dealer extends Player {
     return false;
   }
 
+  public void dealCardToPlayer(Card.Mutable c, Player playerToDealCardTo) {
+    playerToDealCardTo.dealCard(c);
+    updateShowCards();
+  }
+
+  private void updateShowCards() {
+    for (DealCardSubscriber sub : subscribers) {
+      sub.update();
+    }
+  }
+
   /**
    * Gives the player one more card if possible. I.e. the player hits.
 
@@ -51,7 +74,7 @@ public class Dealer extends Player {
    */
   public boolean hit(Player player) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
-      deck.getShowDealCard(true, player);
+      deck.getShowDealCard(true, this, player);
       return true;
     }
     return false;
@@ -91,7 +114,7 @@ public class Dealer extends Player {
     showHand();
     if (deck != null) {
       while (hitRule.doHit(this)) {
-        deck.getShowDealCard(true, this);
+        deck.getShowDealCard(true, this, this);
       }
       return true;
     }

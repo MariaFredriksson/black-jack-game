@@ -13,19 +13,19 @@ public class Player {
 
   private List<Card.Mutable> hand;
   protected final int maxScore = 21;
-  private ArrayList<DealCardSubscriber> subscribers = new ArrayList<DealCardSubscriber>();
+  // private ArrayList<DealCardSubscriber> subscribers = new ArrayList<DealCardSubscriber>();
 
   public Player() {
     hand = new LinkedList<Card.Mutable>();
   }
 
-  public void addSubscriber(DealCardSubscriber subscriber) {
-    subscribers.add(subscriber);
-  }
+  // public void addSubscriber(DealCardSubscriber subscriber) {
+  //   subscribers.add(subscriber);
+  // }
 
-  public void removeSubscriber(DealCardSubscriber subscriber) {
-    subscribers.remove(subscriber);
-  }
+  // public void removeSubscriber(DealCardSubscriber subscriber) {
+  //   subscribers.remove(subscriber);
+  // }
 
   /**
    * Adds a card to the Player's hand. 
@@ -34,14 +34,14 @@ public class Player {
    */
   public void dealCard(Card.Mutable addToHand) {
     hand.add(addToHand);
-    updateShowCards();
+    // updateShowCards();
   }
 
-  private void updateShowCards() {
-    for (DealCardSubscriber sub : subscribers) {
-      sub.update();
-    }
-  }
+  // private void updateShowCards() {
+  //   for (DealCardSubscriber sub : subscribers) {
+  //     sub.update();
+  //   }
+  // }
 
   /**
    * Returns the cards in thand.

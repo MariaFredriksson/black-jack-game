@@ -46,10 +46,11 @@ public class Deck {
     return c;
   }
 
-  public void getShowDealCard(boolean showCard, Player playerToDealCardTo) {
+  public void getShowDealCard(boolean showCard, Dealer dealer, Player playerToDealCardTo) {
     Card.Mutable c = getCard();
     c.show(showCard);
-    playerToDealCardTo.dealCard(c);
+    // playerToDealCardTo.dealCard(c);
+    dealer.dealCardToPlayer(c, playerToDealCardTo);
   }
 
   private void shuffle() {
